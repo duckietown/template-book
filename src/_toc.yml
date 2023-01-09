@@ -1,0 +1,24 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+    - caption: PART_ONE
+      maxdepth: 2
+      numbered: True
+      chapters:
+          - file: chapter_a/index
+            sections:
+                - file: chapter_a/section_1
+    - caption: PART_TWO
+      maxdepth: 2
+      numbered: True
+      chapters:
+          - file: chapter_b/index
+            sections:
+                - file: chapter_b/section_1
+          - file: chapter_c/index
+            sections:
+                - file: chapter_c/section_1
+                - file: chapter_c/section_2
