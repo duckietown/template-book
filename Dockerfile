@@ -1,9 +1,4 @@
-# parameters
-ARG REPO_NAME="<REPO_NAME_HERE>"
-ARG DESCRIPTION="<DESCRIPTION_HERE>"
 ARG MAINTAINER="<YOUR_FULL_NAME> (<YOUR_EMAIL_ADDRESS>)"
-# pick an icon from: https://fontawesome.com/v4.7.0/icons/
-ARG ICON="book"
 
 # ==================================================>
 # ==> Do not change the code below this line
@@ -19,8 +14,6 @@ FROM ${DOCKER_REGISTRY}/duckietown/${BASE_IMAGE}:${BASE_TAG} as base
 
 # recall all arguments
 ARG DISTRO
-ARG REPO_NAME
-ARG DESCRIPTION
 ARG MAINTAINER
 ARG ICON
 ARG BASE_TAG
@@ -32,19 +25,16 @@ ARG TARGETOS
 ARG TARGETARCH
 ARG TARGETVARIANT
 
-# check build arguments
-RUN dt-build-env-check "${REPO_NAME}" "${MAINTAINER}" "${DESCRIPTION}"
-
 # define/create repository path
-ARG REPO_PATH="${SOURCE_DIR}/${REPO_NAME}"
-ARG LAUNCH_PATH="${LAUNCH_DIR}/${REPO_NAME}"
+ARG REPO_PATH="${SOURCE_DIR}/book"
+ARG LAUNCH_PATH="${LAUNCH_DIR}/book"
 RUN mkdir -p "${REPO_PATH}" "${LAUNCH_PATH}"
 WORKDIR "${REPO_PATH}"
 
 # keep some arguments as environment variables
-ENV DT_MODULE_TYPE="${REPO_NAME}" \
-    DT_MODULE_DESCRIPTION="${DESCRIPTION}" \
-    DT_MODULE_ICON="${ICON}" \
+ENV DT_MODULE_TYPE="book" \
+    DT_MODULE_DESCRIPTION="book" \
+    DT_MODULE_ICON="book" \
     DT_MAINTAINER="${MAINTAINER}" \
     DT_REPO_PATH="${REPO_PATH}" \
     DT_LAUNCH_PATH="${LAUNCH_PATH}" \
@@ -71,9 +61,9 @@ RUN dt-install-launchers "${LAUNCH_PATH}"
 CMD ["bash", "-c", "dt-launcher-${DT_LAUNCHER}"]
 
 # store module metadata
-LABEL org.duckietown.label.module.type="${REPO_NAME}" \
-    org.duckietown.label.module.description="${DESCRIPTION}" \
-    org.duckietown.label.module.icon="${ICON}" \
+LABEL org.duckietown.label.module.type="book" \
+    org.duckietown.label.module.description="book" \
+    org.duckietown.label.module.icon="book" \
     org.duckietown.label.platform.os="${TARGETOS}" \
     org.duckietown.label.platform.architecture="${TARGETARCH}" \
     org.duckietown.label.platform.variant="${TARGETVARIANT}" \

@@ -1,3 +1,3 @@
 # Chapter B
 
-Write the content of Chapter B here.
+Write the content of `Chapter B` here.

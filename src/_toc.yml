@@ -8,17 +8,17 @@ parts:
       maxdepth: 2
       numbered: True
       chapters:
-          - file: chapter_a/index
+          - file: part_1/chapter_a/index
             sections:
-                - file: chapter_a/section_1
+                - file: part_1/chapter_a/section_1
     - caption: PART_TWO
       maxdepth: 2
       numbered: True
       chapters:
-          - file: chapter_b/index
+          - file: part_2/chapter_b/index
             sections:
-                - file: chapter_b/section_1
-          - file: chapter_c/index
+                - file: part_2/chapter_b/section_1
+          - file: part_2/chapter_c/index
             sections:
-                - file: chapter_c/section_1
-                - file: chapter_c/section_2
+                - file: part_2/chapter_c/section_1
+                - file: part_2/chapter_c/section_2
