@@ -1,5 +1,3 @@
-ARG MAINTAINER="<YOUR_FULL_NAME> (<YOUR_EMAIL_ADDRESS>)"
-
 # ==================================================>
 # ==> Do not change the code below this line
 ARG ARCH
@@ -14,7 +12,6 @@ FROM ${DOCKER_REGISTRY}/duckietown/${BASE_IMAGE}:${BASE_TAG} as base
 
 # recall all arguments
 ARG DISTRO
-ARG MAINTAINER
 ARG ICON
 ARG BASE_TAG
 ARG BASE_IMAGE
@@ -35,7 +32,7 @@ WORKDIR "${REPO_PATH}"
 ENV DT_MODULE_TYPE="book" \
     DT_MODULE_DESCRIPTION="book" \
     DT_MODULE_ICON="book" \
-    DT_MAINTAINER="${MAINTAINER}" \
+    DT_MAINTAINER="everybody" \
     DT_REPO_PATH="${REPO_PATH}" \
     DT_LAUNCH_PATH="${LAUNCH_PATH}" \
     DT_LAUNCHER="${LAUNCHER}"
@@ -71,6 +68,6 @@ LABEL org.duckietown.label.module.type="book" \
     org.duckietown.label.code.version.distro="${DISTRO}" \
     org.duckietown.label.base.image="${BASE_IMAGE}" \
     org.duckietown.label.base.tag="${BASE_TAG}" \
-    org.duckietown.label.maintainer="${MAINTAINER}"
+    org.duckietown.label.maintainer="everybody"
 # <== Do not change the code above this line
 # <==================================================
