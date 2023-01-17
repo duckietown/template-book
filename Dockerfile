@@ -3,7 +3,7 @@
 ARG ARCH
 ARG DISTRO=daffy
 ARG DOCKER_REGISTRY=docker.io
-ARG BASE_IMAGE=dt-commons
+ARG BASE_IMAGE=dt-jupyter-book
 ARG BASE_TAG=${DISTRO}-${ARCH}
 ARG LAUNCHER=default
 
@@ -46,16 +46,6 @@ ARG PIP_INDEX_URL="https://pypi.org/simple"
 ENV PIP_INDEX_URL=${PIP_INDEX_URL}
 COPY ./dependencies-py3.* "${REPO_PATH}/"
 RUN dt-pip3-install "${REPO_PATH}/dependencies-py3.*"
-
-# copy the source code
-COPY ./packages "${REPO_PATH}/packages"
-
-# install launcher scripts
-COPY ./launchers/. "${LAUNCH_PATH}/"
-RUN dt-install-launchers "${LAUNCH_PATH}"
-
-# define default command
-CMD ["bash", "-c", "dt-launcher-${DT_LAUNCHER}"]
 
 # store module metadata
 LABEL org.duckietown.label.module.type="book" \
