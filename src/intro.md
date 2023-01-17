@@ -1,6 +1,6 @@
 # Welcome to your new Book
 
-```{figure} images/image.png
+```{figure} _images/image.png
 :height: 150px
 :name: figure-example
 
