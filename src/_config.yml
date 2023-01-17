@@ -24,18 +24,18 @@ bibtex_bibfiles:
 # Information about where the book exists on the web
 repository:
   url: https://github.com/duckietown/BOOK_NAME_HERE
-
+  path_to_book: src
 
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
   favicon: _images/favicon.ico
-  use_issues_button: false
+  use_issues_button: true
   use_repository_button: true
+  use_edit_page_button: true
   extra_navbar: ""
 
 sphinx:
+  extra_extensions: {}
   config:
-    html_theme_options:
-      use_download_button: false
-      repository_url: https://github.com/duckietown/BOOK_NAME_HERE
+    intersphinx_mapping: {}
