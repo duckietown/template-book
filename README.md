@@ -30,10 +30,8 @@ reflects the scope of your book. Transparent PNGs are recommended.
 
 ## Build
 
-You can build your book by running the command,
+You can build this book by running the command,
 
 ```shell
-jb build --path-output ./html/ ./src/
+dts docs build
 ```
-
-TODO: wrap this with `dts docs build`.
