@@ -11,7 +11,7 @@ These are the fields you **must** update to create your book.
 ### Placeholders in `src/_config.yml`
 
 This file configures the build of the book.
-Replace the placeholder string `BOOK_NAME_HERE` (there should be three separate instances of it) with
+Replace the placeholder string `BOOK_NAME_HERE` (there should be two separate instances of it) with
 the name of the repository hosting your book (e.g., `book-devmanual-docs`).
 
 
